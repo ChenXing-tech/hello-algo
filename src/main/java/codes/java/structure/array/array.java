@@ -71,8 +71,4 @@ public class array {
     }
     return res;
   }
-
-
-
-
 }
