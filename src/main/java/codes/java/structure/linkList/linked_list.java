@@ -1,5 +1,7 @@
 package codes.java.structure.linkList;
 
+import java.util.Objects;
+
 /**
  * @author chenxing@bailongma-inc.com
  * @date 2023/10/25
@@ -68,7 +70,7 @@ public class linked_list {
   int find(ListNode head, Object target){
     int index = 0;
     while(head != null){
-      if (head.val == target){
+      if (Objects.equals(target, head.val)){
         return index;
       }
       head = head.next;
