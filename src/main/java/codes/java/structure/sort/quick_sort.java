@@ -14,7 +14,7 @@ public class quick_sort {
   }
 
   /**
-   * 哨兵模式
+   * 哨兵模式，交换基数以及i操作是因为先进行了j--，然后进行了i++;
    * @param nums
    * @param left
    * @param right
@@ -25,11 +25,11 @@ public class quick_sort {
     int med = medianTree(nums, left, (right - left) / 2, right);
     swap(nums, left, med);
     while(i < j){
-      while (nums[i] >= nums[left] && i < j){
-        i++;
-      }
       while (nums[j] <= nums[left] && i < j){
         j--;
+      }
+      while (nums[i] >= nums[left] && i < j){
+        i++;
       }
       swap(nums, left, right);
     }
@@ -44,6 +44,25 @@ public class quick_sort {
     int partition = partition(nums, left, right);
     quickSort(nums, left, partition - 1);
     quickSort(nums, partition + 1, right);
+  }
+
+  /**
+   * 尾递归优化
+   * @param nums
+   * @param left
+   * @param right
+   */
+  public void quickSortNew(int[] nums, int left, int right){
+    while( left < right){
+      int partition = partition(nums, left, right);
+      if (partition - left < partition - right){
+        quickSort( nums, left, partition - 1);
+        left = partition + 1;
+      } else {
+        quickSort(nums, partition + 1,  right);
+        right = partition - 1;
+      }
+    }
   }
 
   /**
