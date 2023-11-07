@@ -21,6 +21,12 @@ public class build_tree {
     return root;
   }
 
+  /**
+   * 根据前序，中序遍历二叉树
+   * @param preOrder
+   * @param inOrder
+   * @return
+   */
   public TreeNode buildTree(int[] preOrder ,int[] inOrder){
     HashMap<Integer, Integer> inOrderheadMap = new HashMap<>();
     for (int i = 0; i < inOrder.length - 1; i++) {
@@ -29,5 +35,4 @@ public class build_tree {
     TreeNode dfs = dfs(preOrder, inOrderheadMap, 0, 0, preOrder.length - 1);
     return dfs;
   }
-
 }
