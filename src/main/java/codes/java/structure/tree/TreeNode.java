@@ -6,7 +6,7 @@ package codes.java.structure.tree;
  * @description
  */
 public class TreeNode {
-  int val; // 节点值
+  public int val; // 节点值
   public TreeNode left; //左节点
   public TreeNode right; // 右节点
   public TreeNode(int val) {
