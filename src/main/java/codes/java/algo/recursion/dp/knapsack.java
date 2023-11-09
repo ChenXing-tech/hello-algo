@@ -17,7 +17,7 @@ public class knapsack {
     if (wgt[i - 1] > c){
       return knapsackDFS(mem, wgt, val, i - 1, c);
     }
-    int no = knapsackDFS(mem, wgt, val, i-1, c);
+    int no = knapsackDFS(mem, wgt, val, i - 1, c);
     int yes = knapsackDFS(mem, wgt, val, i - 1, c -wgt[i - 1]) + val[i - 1];
     mem[i][c] = Math.max(yes,no);
     return mem[i][c];
