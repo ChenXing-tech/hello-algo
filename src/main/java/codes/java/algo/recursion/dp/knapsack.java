@@ -3,7 +3,7 @@ package codes.java.algo.recursion.dp;
 /**
  * @author chenxing@bailongma-inc.com
  * @date 2023/11/8
- * @description
+ * @description 0-1背包问题
  */
 public class knapsack {
   int knapsackDFS(int[][] mem, int[] wgt, int[] val, int i , int c){
